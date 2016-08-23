@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.DS_Store
+/sprint_5_demo/.idea
+/sprint_5_demo/.ipynb_checkpoints
+/sprint_5_demo/cutout_setup_delete.py
+/sprint_5_demo/cutout_setup_em.py
+/sprint_5_demo/start_jupyter.sh
