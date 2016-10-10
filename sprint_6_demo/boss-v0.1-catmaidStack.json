@@ -1,0 +1,49 @@
+{
+  "schema": {
+      "name": "boss-v0.1-schema",
+      "validator": "BossValidatorV01"
+  },
+  "client": {
+    "backend": {
+      "name": "boss",
+      "class": "BossBackend",
+      "host": "api.integration.theboss.io",
+      "protocol": "https"
+    },
+    "path_processor": {
+      "class": "ingest.plugins.filesystem.CatmaidFileImageStackPathProcessor",
+      "params": {
+        "root_dir": "/usr/local/example_catmaid_stack",
+        "filetype": "png"
+      }
+    },
+    "tile_processor": {
+      "class": "ingest.plugins.filesystem.CatmaidFileImageStackTileProcessor",
+      "params": {
+        "filetype": "png"
+      }
+    }
+  },
+  "database": {
+    "collection": "col1",
+    "experiment": "exp1",
+    "channel_layer": "ch1"
+  },
+  "ingest_job": {
+    "resolution": 0,
+    "extent": {
+      "x": [0, 512],
+      "y": [0, 1024],
+      "z": [0, 2],
+      "t": [0, 1]
+    },
+    "tile_size": {
+      "x": 512,
+      "y": 512,
+      "z": 1,
+      "t": 1
+    }
+  }
+}
+
+
