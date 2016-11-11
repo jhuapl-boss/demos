@@ -1,0 +1,49 @@
+{
+  "schema": {
+    "validator": "BossValidatorV01",
+    "name": "boss-v0.1-schema"
+  },
+  "client": {
+    "path_processor": {
+      "params": {
+        "root_dir": "~/data/example",
+        "extension": "png",
+        "base_filename": "<o:1000>_my_data_slice<o:1p:3>"
+      },
+      "class": "ingest.plugins.stack.ZindexStackPathProcessor"
+    },
+    "tile_processor": {
+      "params": {
+        "extension": "png",
+        "filesystem": "local"
+      },
+      "class": "ingest.plugins.stack.ZindexStackTileProcessor"
+    },
+    "backend": {
+      "class": "BossBackend",
+      "host": "api.theboss.io",
+      "protocol": "https",
+      "name": "boss"
+    }
+  },
+  "database": {
+    "channel": "my_ch",
+    "experiment": "my_exp",
+    "collection": "my_col"
+  },
+  "ingest_job": {
+    "resolution": 0,
+    "extent": {
+      "t": [0, 1],
+      "z": [0, 2],
+      "y": [0, 8192],
+      "x": [0, 8192]
+    },
+    "tile_size": {
+      "t": 1,
+      "z": 1,
+      "y": 1024,
+      "x": 1024
+    }
+  }
+}

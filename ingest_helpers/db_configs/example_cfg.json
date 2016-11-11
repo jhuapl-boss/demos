@@ -1,0 +1,30 @@
+{
+  "ingest_cfg": "example_zStack.json",
+  "collection": {
+    "name": "my_col",
+    "description": "An example collection"
+  },
+  "coordinate_frame": {
+    "name": "my_coord",
+    "description": "An example coord frame",
+    "x_start": 0,
+    "x_stop": 4096,
+    "y_start": 0,
+    "y_stop": 4096,
+    "z_start": 0,
+    "z_stop": 64,
+    "voxel_size_x": 3,
+    "voxel_size_y": 3,
+    "voxel_size_z": 30
+  },
+  "experiment": {
+    "name": "my_exp",
+    "description": "An example experiment"
+  },
+  "channel": {
+    "name": "my_ch",
+    "description": "An example channel",
+    "type": "image",
+    "datatype": "uint8"
+  }
+}

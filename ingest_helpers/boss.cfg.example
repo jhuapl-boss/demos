@@ -1,0 +1,8 @@
+# #########################################################
+# The configuration below will be used for the test
+# Copy this file to boss.cfg and enter your host and token
+# #########################################################
+[Default]
+protocol = https
+host = api.theboss.io
+token = asdfgfghfghjghjfggdfgdfsgdsgad

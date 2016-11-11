@@ -94,3 +94,6 @@ ENV/
 /sprint_5_demo/cutout_setup_em.py
 /sprint_5_demo/start_jupyter.sh
 .idea
+/ingest_helpers/boss.cfg
+/ingest_helpers/None0000000.png
+/sprint_5_demo/None0000000.png
