@@ -1,7 +1,7 @@
 {
   "ingest_cfg": "example_zStack.json",
   "collection": {
-    "name": "my_col",
+    "name": "my_collection",
     "description": "An example collection"
   },
   "coordinate_frame": {

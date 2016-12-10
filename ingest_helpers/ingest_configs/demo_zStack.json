@@ -1,0 +1,61 @@
+{
+  "ingest_job": {
+    "extent": {
+      "y": [
+        0,
+        1024
+      ],
+      "x": [
+        0,
+        1024
+      ],
+      "t": [
+        0,
+        1
+      ],
+      "z": [
+        0,
+        32
+      ]
+    },
+    "tile_size": {
+      "y": 1024,
+      "x": 1024,
+      "t": 1,
+      "z": 1
+    },
+    "resolution": 0
+  },
+  "database": {
+    "experiment": "demo_ingest_exp",
+    "collection": "demo_ingest_col",
+    "channel": "demo_ingest_ch"
+  },
+  "schema": {
+    "name": "boss-v0.1-schema",
+    "validator": "BossValidatorV01"
+  },
+  "client": {
+    "backend": {
+      "name": "boss",
+      "host": "api-kleisdm1.thebossdev.io",
+      "protocol": "https",
+      "class": "BossBackend"
+    },
+    "tile_processor": {
+      "params": {
+        "extension": "png",
+        "filesystem": "local"
+      },
+      "class": "ingest.plugins.stack.ZindexStackTileProcessor"
+    },
+    "path_processor": {
+      "params": {
+        "base_filename": "<o:0>",
+        "extension": "png",
+        "root_dir": "/Users/kleisdm1/my_data/MICrONS/repo/user-scratch/kleisdm1/sprint-2-demo/data/kasthuri11_tiles"
+      },
+      "class": "ingest.plugins.stack.ZindexStackPathProcessor"
+    }
+  }
+}

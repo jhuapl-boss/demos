@@ -16,7 +16,7 @@ import json
 from intern.remote.boss import BossRemote
 from intern.resource.boss.resource import *
 
-CONFIG_FILE = "example_cfg.json"
+CONFIG_FILE = "cmu_waypoint_anno_cfg.json"
 
 rmt = BossRemote("./boss.cfg")
 
@@ -28,7 +28,7 @@ with open(os.path.join("./db_configs", CONFIG_FILE), 'rt') as cfg:
 collection = CollectionResource(config["collection"]["name"], config["collection"]["description"])
 try:
     collection = rmt.create_project(collection)
-except:
+except Exception as e:
     collection = rmt.get_project(collection)
 
 # Create a coord frame
@@ -49,8 +49,14 @@ except:
     coord = rmt.get_project(coord)
 
 # Create an experiment
+if "num_time_samples" not in config["experiment"]:
+    num_time_samples = 1
+else:
+    num_time_samples = config["experiment"]["num_time_samples"]
+
 experiment = ExperimentResource(config["experiment"]["name"], collection.name, coord.name,
-                                config["experiment"]["description"])
+                                config["experiment"]["description"],
+                                num_time_samples=num_time_samples)
 try:
     experiment = rmt.create_project(experiment)
 except:

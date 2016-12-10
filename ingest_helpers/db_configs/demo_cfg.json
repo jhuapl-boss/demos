@@ -1,0 +1,30 @@
+{
+  "ingest_cfg": "demo_zStack.json",
+  "collection": {
+    "name": "demo_ingest_col",
+    "description": "Data ingested durint the demo"
+  },
+  "coordinate_frame": {
+    "name": "demo_ingest_coord",
+    "description": "Coord frame for the demo",
+    "x_start": 0,
+    "x_stop": 1024,
+    "y_start": 0,
+    "y_stop": 1024,
+    "z_start": 0,
+    "z_stop": 32,
+    "voxel_size_x": 3,
+    "voxel_size_y": 3,
+    "voxel_size_z": 30
+  },
+  "experiment": {
+    "name": "demo_ingest_exp",
+    "description": "Experiment for the demo"
+  },
+  "channel": {
+    "name": "demo_ingest_ch",
+    "description": "Channel for the demo",
+    "type": "image",
+    "datatype": "uint8"
+  }
+}
