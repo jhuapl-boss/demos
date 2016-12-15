@@ -16,7 +16,8 @@ import json
 from intern.remote.boss import BossRemote
 from intern.resource.boss.resource import *
 
-CONFIG_FILE = "cmu_waypoint_anno_cfg.json"
+
+CONFIG_FILE = "demo_cfg.json"
 
 rmt = BossRemote("./boss.cfg")
 
@@ -63,9 +64,14 @@ except:
     experiment = rmt.get_project(experiment)
 
 # Create a channel
+if "sources" not in config["channel"]:
+    sources = []
+else:
+    sources = config["channel"]["sources"]
+
 channel = ChannelResource(config["channel"]["name"], collection.name, experiment.name,
                           type=config["channel"]["type"], description=config["channel"]["description"],
-                          datatype=config["channel"]["datatype"])
+                          datatype=config["channel"]["datatype"], sources=sources)
 try:
     channel = rmt.create_project(channel)
 except:

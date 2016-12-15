@@ -1,3 +1,4 @@
 intern
 jupyter
 matplotlib
+neuroglancer
