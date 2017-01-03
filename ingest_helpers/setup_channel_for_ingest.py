@@ -77,6 +77,10 @@ try:
 except:
     channel = rmt.get_project(channel)
 
+# Add gov team permissions
+rmt.add_permissions('gov_team', collection, ['read'])
+rmt.add_permissions('gov_team', experiment, ['read'])
+rmt.add_permissions('gov_team', channel, ['read'])
 
 # Update ingest file with resources names from config file
 with open(os.path.join("./ingest_configs", config['ingest_cfg']), 'rt') as cfg:
